@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class MoyZakaz extends StatefulWidget {
   const MoyZakaz({super.key});
@@ -78,37 +79,29 @@ class _MoyZakazState extends State<MoyZakaz> with TickerProviderStateMixin {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Container(
-                        //   height: 245,
-                        //   width: 228,
-                        //   child: Image.asset('assets/ok.png'),
-                        // ),
-                        Text(
-                          "Заказы недоступен",
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black38),
-                        ),
+                        Container(),
                       ],
                     ),
                   ),
                   Center(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Container(
-                        //   height: 245,
-                        //   width: 228,
-                        //   child: Image.asset('assets/ok.png'),
-                        // ),
-                        Text(
-                          "Заказы недоступен",
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black38),
+                        SizedBox(
+                          height: 12,
                         ),
+                        Container(
+                          height: 144,
+                          width: 370,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Container(
+                            margin: EdgeInsets.only(left: 12, right: 12),
+                            child: SvgPicture.asset(
+                                'assets/profile_icons/zakaz.svg'),
+                          ),
+                        )
                       ],
                     ),
                   ),

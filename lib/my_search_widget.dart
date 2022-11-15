@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MySearch extends StatefulWidget {
   const MySearch({super.key});
@@ -42,7 +43,7 @@ class _MySearchState extends State<MySearch> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 filled: true,
-                fillColor: const Color.fromRGBO(248, 246, 250, 1),
+                fillColor: Color.fromRGBO(248, 246, 250, 1),
                 suffixIcon: _searchcontroller.text.isEmpty
                     ? Container(width: 0)
                     : IconButton(
@@ -57,10 +58,11 @@ class _MySearchState extends State<MySearch> {
                           size: 20,
                         ),
                       ),
-                prefixIcon: const Icon(
-                  Icons.search,
-                  color: Colors.grey,
-                  size: 20,
+                prefixIcon: SvgPicture.asset(
+                  'assets/icons/search.svg',
+                  height: 5,
+                  width: 5,
+                  fit: BoxFit.scaleDown,
                 ),
               ),
             ),

@@ -58,6 +58,7 @@ class MyRegTwo extends StatelessWidget {
                   fillColor: Colors.white,
                   hintText: 'Введите ваш имя ',
                   border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),

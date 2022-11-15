@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:maxway_/customhome.dart';
+import 'package:maxway_/list_name_price/tabbar_title.dart';
 import 'package:maxway_/moy_zakaz.dart';
-import 'package:maxway_/my_catalog.dart';
 import 'package:maxway_/my_home.dart';
 import 'package:maxway_/profile.dart';
 
@@ -15,11 +17,11 @@ class _MyWidgetState extends State<MyNaviBar> with TickerProviderStateMixin {
   TabController? tabController;
   late int activpage;
   late List pages;
-  late bool tab;
+
   @override
   void initState() {
     pages = [
-      MyHome(),
+      MyCustomScroll(),
       MoyZakaz(),
       MyAccount(),
     ];
@@ -35,19 +37,47 @@ class _MyWidgetState extends State<MyNaviBar> with TickerProviderStateMixin {
     return Scaffold(
       body: pages[activpage],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(255, 255, 255, 1),
         unselectedItemColor: Colors.grey,
-        selectedItemColor: Color.fromARGB(255, 94, 40, 144),
+        selectedItemColor: Color.fromRGBO(81, 38, 125, 1),
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
         currentIndex: activpage,
-        elevation: 0,
         onTap: (value) {
           activpage = value;
           setState(() {});
         },
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Главное'),
-          BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Мой заказы'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Личное'),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                activpage == 0
+                    ? 'assets/icons/home2.svg'
+                    : 'assets/icons/home.svg',
+                height: 20,
+                width: 20,
+                fit: BoxFit.scaleDown,
+              ),
+              label: 'Главное'),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                activpage == 1
+                    ? 'assets/icons/shop2.svg'
+                    : 'assets/icons/shop.svg',
+                height: 20,
+                width: 20,
+                fit: BoxFit.scaleDown,
+              ),
+              label: 'Мои заказы'),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                activpage == 2
+                    ? 'assets/icons/profile2.svg'
+                    : 'assets/icons/profile.svg',
+                height: 20,
+                width: 20,
+                fit: BoxFit.scaleDown,
+              ),
+              label: 'Личное'),
         ],
       ),
     );

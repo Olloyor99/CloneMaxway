@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/svg.dart';
 
 class MyInfo extends StatefulWidget {
   const MyInfo({super.key});
@@ -11,24 +10,21 @@ class MyInfo extends StatefulWidget {
 
 class _MyInfoState extends State<MyInfo> {
   String name = "Olloyor";
-  int number = 23;
-  int age = 30;
+  String lastname = "Nodirov";
+  String number = "+998 94 995 95 25";
+  String brithday = "30.12.1999";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 242, 239, 239),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(255, 255, 255, 1),
         elevation: 0,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
+          icon: SvgPicture.asset('assets/profile_icons/back.svg'),
         ),
         title: Text(
           "Редактировать профиль",
@@ -39,70 +35,88 @@ class _MyInfoState extends State<MyInfo> {
           ),
         ),
       ),
-      body: Center(
-        child: Container(
-          width: 351,
-          child: Column(
-            children: [
-              SizedBox(height: 12),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: Text(" Имя"),
-              ),
-              SizedBox(height: 4),
-              TextFormField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 12),
-                  constraints: BoxConstraints(maxHeight: 48),
-                  filled: true,
-                  fillColor: Colors.white,
-                  // focusedBorder:,
-                  hintText: '$name',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(
-                      color: Color.fromARGB(255, 94, 40, 144),
+      body: Container(
+        color: Color.fromARGB(08, 08, 08, 1),
+        child: Center(
+          child: Container(
+            width: 351,
+            child: Column(
+              children: [
+                SizedBox(height: 12),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(" Имя"),
+                ),
+                SizedBox(height: 4),
+                TextFormField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 12),
+                    constraints: BoxConstraints(maxHeight: 48),
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: '$name',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide.none),
+                  ),
+                ),
+                SizedBox(height: 24),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(" Фамилия"),
+                ),
+                SizedBox(height: 4),
+                TextFormField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 12),
+                    constraints: BoxConstraints(maxHeight: 48),
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: '$lastname',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide.none),
+                  ),
+                ),
+                SizedBox(height: 24),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(" Номер телефона"),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 12),
+                    constraints: BoxConstraints(maxHeight: 48),
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: '$number',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide.none,
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 24),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: Text(" Номер телефона"),
-              ),
-              SizedBox(height: 4),
-              TextFormField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 12),
-                  constraints: BoxConstraints(maxHeight: 48),
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: '$number',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
+                SizedBox(height: 24),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(" Ваш дата рождения"),
+                ),
+                SizedBox(height: 4),
+                TextFormField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 12),
+                    constraints: BoxConstraints(maxHeight: 48),
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: '$brithday',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide.none,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 24),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: Text(" Ваш дата рождения"),
-              ),
-              SizedBox(height: 4),
-              TextFormField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 12),
-                  constraints: BoxConstraints(maxHeight: 48),
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: '$age',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

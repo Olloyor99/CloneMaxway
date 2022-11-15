@@ -50,6 +50,7 @@ class _MyRegstrationState extends State<MyRegstrationOne> {
                   fillColor: Colors.white,
                   hintText: 'Введите номер телефона',
                   border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),

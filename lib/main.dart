@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:maxway_/list_name_price/narxlari.dart';
-
-import 'package:maxway_/my_catalog.dart';
+import 'package:maxway_/filial.dart';
 import 'package:maxway_/my_info.dart';
 import 'package:maxway_/my_korzina.dart';
-
 import 'package:maxway_/my_logo.dart';
 import 'package:maxway_/my_navibar.dart';
+import 'package:maxway_/myex.dart';
 import 'package:maxway_/profile.dart';
+import 'package:maxway_/recomment2.dart';
 import 'package:maxway_/reg_two.dart';
 import 'package:maxway_/regstration_one.dart';
+import 'package:maxway_/service.dart';
+import 'package:maxway_/settings.dart';
 
 void main() => runApp(MyWidget());
 
@@ -38,6 +39,16 @@ class MyWidget extends StatelessWidget {
                   builder: ((context) => MyRegstrationOne()));
             case 'reg2':
               return MaterialPageRoute(builder: ((context) => MyRegTwo()));
+            case 'filial':
+              return MaterialPageRoute(builder: ((context) => MyFilial()));
+            case 'settings':
+              return MaterialPageRoute(builder: ((context) => MySettings()));
+            case 'oservice':
+              return MaterialPageRoute(builder: ((context) => Oservise()));
+            case 'myrec2':
+              return MaterialPageRoute(builder: ((context) => Myrec2()));
+            case 'politica':
+              return MaterialPageRoute(builder: ((context) => Politica()));
           }
         });
   }

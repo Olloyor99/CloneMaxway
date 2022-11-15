@@ -10,19 +10,19 @@ List<String> nomimaxiBoks = [
   //maksi boks nomi
   """
 Maksi Boks
-Populyarniy Ks
+  Populyarniy Ks
 """,
   """
 Macksi Boks
-Tradisiya ks
+  Tradisiya ks
 """,
   """
 Macksi Boks
-Trend Boks ks
+  Trend Boks ks
 """,
   """
 Macksi Boks
-retro ks
+  retro ks
 """,
 ];
 List<int> lavashnarxi = [
@@ -43,14 +43,14 @@ List<String> lavashnomi = [
   /// lavashnomi
   """
 Lavash Standart
-classic
+  classic
 """,
   """
 Lavash mini
 """,
   """
 Lavash Standart
-Cheese
+  Cheese
 """,
   """
 Lavash mini Cheese
@@ -58,26 +58,26 @@ Lavash mini Cheese
 """,
   """
 Lavash Kurinniy
-Standart Chesse
+  Standart Chesse
 """,
   """
 Lavash Kurinniy Mini
-Cheese
+  Cheese
 """,
   """
 Lavash Kurinniy 
-Standart Classic
+  Standart Classic
 """,
   """
 Lavash Kurinniy Mini
 """,
   """
 Lavash Miyasnoy 
-Standart Ostriy
+  Standart Ostriy
 """,
   """
 Lavash Kurinniy 
-Standart Ostriy
+  Standart Ostriy
 """,
 ];
 List<int> klabsendvichnarxi = [

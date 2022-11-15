@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'list_name_price/tabbar_title.dart';
 
 class TabbarTwo extends StatefulWidget {
@@ -27,7 +26,7 @@ class _TabbarTwoState extends State<TabbarTwo> {
         margin: const EdgeInsets.all(5),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: _isSlected ? Color.fromARGB(255, 94, 40, 144) : Colors.white,
+          color: _isSlected ? Color.fromRGBO(81, 38, 125, 1) : Colors.white,
           borderRadius: BorderRadius.circular(11),
         ),
         child: Text(

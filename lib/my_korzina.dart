@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:maxway_/customhome.dart';
 import 'package:maxway_/list_name_price/narxlari.dart';
 import 'package:maxway_/my_home.dart';
 
@@ -38,36 +40,34 @@ class MyKorzinaState extends State<MyKorzina> {
         ),
         actions: [
           IconButton(
-              onPressed: () {
-                showCupertinoDialog(
-                    context: context,
-                    builder: (context) {
-                      return CupertinoAlertDialog(
-                        title: Text("Внимание !"),
-                        actions: [
-                          CupertinoDialogAction(
-                            child: Text("Отменить"),
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                          ),
-                          CupertinoDialogAction(
-                            child: Text("Да"),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: ((context) => MyHome())));
-                            },
-                          ),
-                        ],
-                      );
-                    });
-              },
-              icon: Icon(
-                Icons.delete_outlined,
-                color: Colors.black,
-              ))
+            onPressed: () {
+              showCupertinoDialog(
+                  context: context,
+                  builder: (context) {
+                    return CupertinoAlertDialog(
+                      title: Text("Внимание !"),
+                      actions: [
+                        CupertinoDialogAction(
+                          child: Text("Отменить"),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        CupertinoDialogAction(
+                          child: Text("Да"),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: ((context) => MyCustomScroll())));
+                          },
+                        ),
+                      ],
+                    );
+                  });
+            },
+            icon: SvgPicture.asset('assets/profile_icons/delete.svg'),
+          ),
         ],
       ),
       body: Center(
@@ -113,7 +113,7 @@ class MyKorzinaState extends State<MyKorzina> {
                                     height: 18,
                                     margin: EdgeInsets.only(top: 12, left: 8),
                                     child: Text(
-                                      "makc burger",
+                                      "${lavashnomi[index].toString()}",
                                       style: TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.w600),

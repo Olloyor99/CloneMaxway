@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class MyAccount extends StatefulWidget {
   const MyAccount({super.key});
@@ -11,172 +12,194 @@ class _MyProfileState extends State<MyAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(248, 246, 250, 1),
       body: Center(
-        child: Column(
-          children: [
-            SizedBox(height: 72),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 32,
-                  width: 252,
-                  margin: EdgeInsets.only(left: 12),
-                  child: Text(
-                    "Olloyor",
-                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, 'info');
-                  },
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  icon: Icon(
-                    Icons.edit_note,
-                    size: 30,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(left: 12, bottom: 16),
-                  child: Text(
-                    "+998 99 995 95 25",
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                )
-              ],
-            ),
-            Expanded(
-              child: Container(
-                color: Color.fromARGB(255, 242, 239, 239),
-                child: Column(
+        child: Container(
+          color: Color.fromRGBO(248, 246, 250, 1),
+          child: Column(
+            children: [
+              SizedBox(height: 72),
+              Container(
+                height: 50,
+                child: Row(
                   children: [
                     Container(
-                      height: 64,
-                      margin: EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: ListTile(
-                        onTap: () {},
-                        leading: Icon(Icons.map_outlined),
-                        title: Text(
-                          "Филиали",
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        iconColor: Color.fromARGB(255, 94, 40, 144),
-                        trailing: Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.grey,
-                          size: 18,
-                        ),
+                      height: 32,
+                      width: 252,
+                      margin: EdgeInsets.only(left: 12),
+                      child: Text(
+                        "Olloyor Nodirov",
+                        style: TextStyle(
+                            fontSize: 28, fontWeight: FontWeight.w700),
                       ),
                     ),
-                    Container(
-                      height: 64,
-                      margin: EdgeInsets.only(left: 12, right: 12, bottom: 12),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: ListTile(
-                        leading: Icon(Icons.location_on),
-                        title: Text(
-                          "Мой адреса",
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w600),
-                        ),
-                        iconColor: Color.fromARGB(255, 94, 40, 144),
-                        trailing: Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.grey,
-                          size: 18,
-                        ),
-                      ),
+                    SizedBox(
+                      width: 75,
                     ),
-                    Container(
-                      height: 64,
-                      margin: EdgeInsets.only(left: 12, right: 12),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: ListTile(
-                        leading: Icon(Icons.settings),
-                        title: Text(
-                          "Настройки ",
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w600),
-                        ),
-                        iconColor: Color.fromARGB(255, 94, 40, 144),
-                        trailing: Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.grey,
-                          size: 18,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 64,
-                      margin: EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: ListTile(
-                        leading: Icon(Icons.info),
-                        title: Text(
-                          "О сервисе",
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w600),
-                        ),
-                        iconColor: Color.fromARGB(255, 94, 40, 144),
-                        trailing: Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.grey,
-                          size: 18,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 64,
-                      margin: EdgeInsets.only(left: 12, right: 12),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: ListTile(
-                        leading: Icon(Icons.info),
-                        title: Text(
-                          "Выйти",
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w600),
-                        ),
-                        iconColor: Color.fromARGB(255, 94, 40, 144),
-                        trailing: Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.grey,
-                          size: 18,
-                        ),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'info');
+                      },
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      icon: SvgPicture.asset(
+                        'assets/profile_icons/editing.svg',
+                        height: 25,
+                        width: 25,
                       ),
                     ),
                   ],
                 ),
               ),
-            ),
-          ],
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 12, bottom: 16),
+                    child: Text(
+                      "+998 99 995 95 25",
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w400,
+                          color: Color.fromRGBO(129, 140, 153, 1)),
+                    ),
+                  )
+                ],
+              ),
+              Expanded(
+                child: Container(
+                  alignment: Alignment.center,
+                  color: Color.fromARGB(08, 08, 08, 1),
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, 'filial');
+                        },
+                        child: Container(
+                          height: 64,
+                          margin: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Row(
+                            children: [
+                              SizedBox(width: 12),
+                              Container(
+                                child: SvgPicture.asset(
+                                    'assets/profile_icons/location.svg'),
+                              ),
+                              SizedBox(width: 12),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(context, 'filial');
+                                },
+                                child: Container(
+                                  width: 187,
+                                  child: Text(
+                                    "Филиали",
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 71.5),
+                              Container(
+                                child: SvgPicture.asset(
+                                  'assets/profile_icons/forward.svg',
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, 'settings');
+                        },
+                        child: Container(
+                          height: 64,
+                          margin:
+                              EdgeInsets.only(left: 12, right: 12, bottom: 12),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Row(
+                            children: [
+                              SizedBox(width: 12),
+                              Container(
+                                child: SvgPicture.asset(
+                                    'assets/profile_icons/set.svg'),
+                              ),
+                              SizedBox(width: 12),
+                              Container(
+                                width: 187,
+                                child: Text(
+                                  "Настройки",
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 71.5),
+                              Container(
+                                child: SvgPicture.asset(
+                                  'assets/profile_icons/forward.svg',
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, 'oservice');
+                        },
+                        child: Container(
+                          height: 64,
+                          margin: EdgeInsets.only(left: 12, right: 12),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Row(
+                            children: [
+                              SizedBox(width: 12),
+                              Container(
+                                child: SvgPicture.asset(
+                                    'assets/profile_icons/sevice.svg'),
+                              ),
+                              SizedBox(width: 12),
+                              Container(
+                                width: 187,
+                                child: Text(
+                                  "О сервисе",
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 71.5),
+                              Container(
+                                child: SvgPicture.asset(
+                                  'assets/profile_icons/forward.svg',
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
