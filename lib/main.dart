@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:maxway_/filial.dart';
-import 'package:maxway_/my_info.dart';
-import 'package:maxway_/my_korzina.dart';
-import 'package:maxway_/my_logo.dart';
-import 'package:maxway_/my_navibar.dart';
-import 'package:maxway_/myex.dart';
-import 'package:maxway_/profile.dart';
-import 'package:maxway_/recomment2.dart';
-import 'package:maxway_/reg_two.dart';
-import 'package:maxway_/regstration_one.dart';
-import 'package:maxway_/service.dart';
-import 'package:maxway_/settings.dart';
+import 'package:maxway_/src/widgets/filial.dart';
+import 'package:maxway_/src/widgets/my_info.dart';
+import 'package:maxway_/src/widgets/my_korzina.dart';
+import 'package:maxway_/src/widgets/my_logo.dart';
+import 'package:maxway_/src/widgets/my_navibar.dart';
+import 'package:maxway_/src/widgets/politica.dart';
+import 'package:maxway_/src/widgets/profile.dart';
+import 'package:maxway_/src/widgets/recomment2.dart';
+import 'package:maxway_/src/widgets/reg_two.dart';
+import 'package:maxway_/src/widgets/regstration_one.dart';
+import 'package:maxway_/src/widgets/service.dart';
+import 'package:maxway_/src/widgets/settings.dart';
 
 void main() => runApp(MyWidget());
 
