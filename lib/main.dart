@@ -11,6 +11,7 @@ import 'package:maxway_/src/pages/reg_two.dart';
 import 'package:maxway_/src/pages/regstration_one.dart';
 import 'package:maxway_/src/pages/service.dart';
 import 'package:maxway_/src/pages/settings.dart';
+import 'package:maxway_/src/pdoduct_name/variables.dart';
 
 void main() => runApp(MyWidget());
 
@@ -31,7 +32,10 @@ class MyWidget extends StatelessWidget {
             case 'myprofile':
               return MaterialPageRoute(builder: ((context) => MyAccount()));
             case 'korzina':
-              return MaterialPageRoute(builder: ((context) => MyKorzina()));
+              return MaterialPageRoute(
+                  builder: ((context) => MyKorzina(
+                        shtuk2: [shtuk],
+                      )));
             case 'info':
               return MaterialPageRoute(builder: ((context) => MyInfo()));
             case 'regstrationone':

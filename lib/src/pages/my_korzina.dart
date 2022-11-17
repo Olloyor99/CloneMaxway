@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:maxway_/list_name_price/l_photos.dart';
 import 'package:maxway_/list_name_price/narxlari.dart';
+import 'package:maxway_/src/pages/customhome.dart';
 import 'package:maxway_/src/pages/my_dialog.dart';
-
+import 'package:maxway_/src/pdoduct_name/variables.dart';
 import 'my_korzin_two.dart';
 
 class MyKorzina extends StatefulWidget {
-  List? shtuk2 = List.generate(50, (index) => 0);
+  List shtuk2 = List.generate(lavashnomi.length, (index) => 0);
+
   int? korzina2;
   int? forlist;
-  MyKorzina({Key? key, this.shtuk2, this.korzina2, this.forlist})
+  MyKorzina({Key? key, required this.shtuk2, this.korzina2, this.forlist})
       : super(key: key);
   @override
   State<MyKorzina> createState() => MyKorzinaState();
 }
 
 class MyKorzinaState extends State<MyKorzina> {
+  MyCustomScroll myCustomScroll = MyCustomScroll();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -124,7 +127,8 @@ class MyKorzinaState extends State<MyKorzina> {
                                         width: 32,
                                         transformAlignment: Alignment.center,
                                         decoration: BoxDecoration(
-                                            color: Colors.white,
+                                            color: Color.fromRGBO(
+                                                246, 248, 251, 1),
                                             borderRadius:
                                                 BorderRadius.circular(8)),
                                         child: IconButton(
@@ -149,7 +153,8 @@ class MyKorzinaState extends State<MyKorzina> {
                                         width: 32,
                                         transformAlignment: Alignment.center,
                                         decoration: BoxDecoration(
-                                            color: Colors.white,
+                                            color: Color.fromRGBO(
+                                                246, 248, 251, 1),
                                             borderRadius:
                                                 BorderRadius.circular(8)),
                                         child: IconButton(
