@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maxway_/list_name_price/text.dart';
-import 'package:maxway_/src/widgets/recomment2.dart';
+import 'package:maxway_/src/pages/recomment2.dart';
 
 class MyRecoment extends StatefulWidget {
   @override

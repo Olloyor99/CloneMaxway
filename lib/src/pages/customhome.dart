@@ -1,12 +1,13 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:maxway_/list_name_price/l_photos.dart';
 import 'package:maxway_/list_name_price/narxlari.dart';
 import 'package:maxway_/list_name_price/tabbar_title.dart';
-import 'package:maxway_/src/widgets/my_korzina.dart';
-import 'package:maxway_/src/widgets/my_recom.dart';
-import 'package:maxway_/src/widgets/my_search_widget.dart';
-import 'package:maxway_/src/widgets/tabbar.dart';
+import 'package:maxway_/src/pages/my_korzina.dart';
+import 'package:maxway_/src/pages/my_recom.dart';
+import 'package:maxway_/src/pages/my_search_widget.dart';
+import 'package:maxway_/src/pages/tabbar.dart';
 
 class MyCustomScroll extends StatefulWidget {
   @override
@@ -73,7 +74,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                           height: 124,
                           width: 170,
                           decoration: BoxDecoration(
-                              color: Colors.grey,
+                              color: Color.fromARGB(255, 236, 230, 242),
                               image: DecorationImage(
                                   image:
                                       AssetImage("${photos[index].toString()}"),

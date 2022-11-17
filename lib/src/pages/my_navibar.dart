@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:maxway_/src/widgets/customhome.dart';
-import 'package:maxway_/src/widgets/moy_zakaz.dart';
-import 'package:maxway_/src/widgets/profile.dart';
+import 'package:maxway_/src/pages/customhome.dart';
+import 'package:maxway_/src/pages/moy_zakaz.dart';
+import 'package:maxway_/src/pages/profile.dart';
 
 class MyNaviBar extends StatefulWidget {
   const MyNaviBar({super.key});
