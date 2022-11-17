@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:maxway_/list_name_price/l_photos.dart';
 import 'package:maxway_/list_name_price/narxlari.dart';
-import 'customhome.dart';
+import 'package:maxway_/src/pages/my_dialog.dart';
+
+import 'my_korzin_two.dart';
 
 class MyKorzina extends StatefulWidget {
   List? shtuk2 = List.generate(50, (index) => 0);
@@ -39,35 +39,7 @@ class MyKorzinaState extends State<MyKorzina> {
               color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
         ),
         actions: [
-          IconButton(
-            onPressed: () {
-              showCupertinoDialog(
-                  context: context,
-                  builder: (context) {
-                    return CupertinoAlertDialog(
-                      title: Text("Внимание !"),
-                      actions: [
-                        CupertinoDialogAction(
-                          child: Text("Отменить"),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                        CupertinoDialogAction(
-                          child: Text("Да"),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: ((context) => MyCustomScroll())));
-                          },
-                        ),
-                      ],
-                    );
-                  });
-            },
-            icon: SvgPicture.asset('assets/profile_icons/delete.svg'),
-          ),
+          MyDialog(),
         ],
       ),
       body: Center(
@@ -207,62 +179,7 @@ class MyKorzinaState extends State<MyKorzina> {
                     )),
               ),
             ),
-            Container(
-              height: 60,
-              margin: EdgeInsets.only(left: 12, right: 12),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(12),
-                  bottomLeft: Radius.circular(12),
-                ),
-              ),
-              child: Column(
-                children: [
-                  Divider(
-                    color: Colors.black,
-                    thickness: .1,
-                  ),
-                  Container(
-                    margin:
-                        EdgeInsets.only(top: 7, left: 2, right: 2, bottom: 2),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(12)),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 12,
-                        ),
-                        Container(
-                          child: Text(
-                            "Сумма заказа",
-                            style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 65,
-                        ),
-                        Container(
-                          width: 150,
-                          alignment: Alignment.centerRight,
-                          margin: EdgeInsets.only(right: 12),
-                          child: Text(
-                            "${widget.korzina2} cум",
-                            style: TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            My_korzin_two(widget: widget),
             SizedBox(height: 230),
             GestureDetector(
               onTap: () {
