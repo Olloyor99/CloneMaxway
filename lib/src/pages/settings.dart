@@ -15,6 +15,7 @@ class _MySettingsState extends State<MySettings> {
     bool sms = false;
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: Text(
           "Настройки",
           style: TextStyle(
@@ -22,12 +23,15 @@ class _MySettingsState extends State<MySettings> {
         ),
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        elevation: 0,
         leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: SvgPicture.asset('assets/profile_icons/back.svg')),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
+          ),
+        ),
       ),
       body: Center(
         child: Container(

@@ -15,7 +15,10 @@ class MyFilial extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: SvgPicture.asset('assets/profile_icons/back.svg'),
+          icon: Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
+          ),
         ),
         title: Text(
           "Филиали",

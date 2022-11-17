@@ -12,10 +12,9 @@ class _MyProfileState extends State<MyAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(248, 246, 250, 1),
       body: Center(
         child: Container(
-          color: Color.fromRGBO(248, 246, 250, 1),
+          color: Colors.white,
           child: Column(
             children: [
               SizedBox(height: 72),
@@ -68,7 +67,7 @@ class _MyProfileState extends State<MyAccount> {
               Expanded(
                 child: Container(
                   alignment: Alignment.center,
-                  color: Color.fromARGB(08, 08, 08, 1),
+                  color: Color(0xfff8F6FA),
                   child: Column(
                     children: [
                       GestureDetector(

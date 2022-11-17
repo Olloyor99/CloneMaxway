@@ -3,16 +3,14 @@ import 'package:maxway_/list_name_price/l_photos.dart';
 import 'package:maxway_/list_name_price/narxlari.dart';
 import 'package:maxway_/src/pages/customhome.dart';
 import 'package:maxway_/src/pages/my_dialog.dart';
-import 'package:maxway_/src/pdoduct_name/variables.dart';
 import 'my_korzin_two.dart';
 
 class MyKorzina extends StatefulWidget {
-  List shtuk2 = List.generate(lavashnomi.length, (index) => 0);
+  static List shtuk2 = List.generate(lavashnomi.length, (index) => 0);
 
   int? korzina2;
   int? forlist;
-  MyKorzina({Key? key, required this.shtuk2, this.korzina2, this.forlist})
-      : super(key: key);
+  MyKorzina({Key? key, shtuk2, this.korzina2, this.forlist}) : super(key: key);
   @override
   State<MyKorzina> createState() => MyKorzinaState();
 }

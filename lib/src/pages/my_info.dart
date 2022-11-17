@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class MyInfo extends StatefulWidget {
   const MyInfo({super.key});
@@ -24,7 +23,10 @@ class _MyInfoState extends State<MyInfo> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: SvgPicture.asset('assets/profile_icons/back.svg'),
+          icon: Icon(
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
+          ),
         ),
         title: Text(
           "Редактировать профиль",
@@ -83,6 +85,7 @@ class _MyInfoState extends State<MyInfo> {
                   alignment: Alignment.centerLeft,
                   child: Text(" Номер телефона"),
                 ),
+                SizedBox(height: 4),
                 TextFormField(
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 12),
@@ -116,7 +119,7 @@ class _MyInfoState extends State<MyInfo> {
                   ),
                 ),
                 SizedBox(
-                  height: 254,
+                  height: 280,
                 ),
                 GestureDetector(
                   onTap: () {},

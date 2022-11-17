@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'my_spisok.dart';
+
 class MoyZakaz extends StatefulWidget {
   const MoyZakaz({super.key});
 
@@ -74,38 +76,81 @@ class _MoyZakazState extends State<MoyZakaz> with TickerProviderStateMixin {
             Expanded(
               child: Container(
                 color: Color.fromARGB(255, 242, 239, 239),
-                child: TabBarView(controller: tabController, children: [
-                  Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(),
-                      ],
+                child: TabBarView(
+                  controller: tabController,
+                  children: [
+                    Container(
+                      child: Column(
+                        children: [
+                          Myspisok(),
+                          Myspisok(),
+                          Myspisok(),
+                        ],
+                      ),
                     ),
-                  ),
-                  Center(
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Container(
-                          height: 144,
-                          width: 370,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(12),
+                    Center(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 12,
                           ),
-                          child: Container(
-                            margin: EdgeInsets.only(left: 12, right: 12),
-                            child: SvgPicture.asset(
-                                'assets/profile_icons/zakaz.svg'),
-                          ),
-                        )
-                      ],
+                          Container(
+                            height: 144,
+                            width: 370,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.only(
+                                top: 16,
+                                left: 12,
+                              ),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 24,
+                                    width: double.infinity,
+                                    child: Text(
+                                      "Статус заказа №1342",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 4,
+                                  ),
+                                  Container(
+                                    height: 24,
+                                    width: double.infinity,
+                                    alignment: Alignment.bottomLeft,
+                                    child: Text(
+                                      "Куриер забрал",
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(81, 38, 125, 1),
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 17,
+                                  ),
+                                  Container(
+                                      height: 44,
+                                      margin: EdgeInsets.only(right: 12),
+                                      width: double.infinity,
+                                      child: SvgPicture.asset(
+                                          'assets/line/step1.svg')),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                ]),
+                  ],
+                ),
               ),
             ),
           ],

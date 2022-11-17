@@ -18,7 +18,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
   int korzina = 0;
   int allValuePlus = 0;
 
-  static List<int> shtuk = List.generate(lavashnarxi.length, (index) => 0);
+  List<int> shtuk = List.generate(lavashnarxi.length, (index) => 0);
   List<bool> withOpasity = List.generate(lavashnarxi.length, (index) => false);
   List<int> aloneValue = List.generate(lavashnarxi.length, (index) => 0);
 
