@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:maxway_/src/widgets/customhome.dart';
-import 'package:maxway_/list_name_price/tabbar_title.dart';
 import 'package:maxway_/src/widgets/moy_zakaz.dart';
-import 'package:maxway_/src/widgets/my_home.dart';
 import 'package:maxway_/src/widgets/profile.dart';
 
 class MyNaviBar extends StatefulWidget {

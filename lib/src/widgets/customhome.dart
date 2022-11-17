@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:maxway_/list_name_price/l_photos.dart';
 import 'package:maxway_/list_name_price/narxlari.dart';
 import 'package:maxway_/list_name_price/tabbar_title.dart';
 import 'package:maxway_/src/widgets/my_korzina.dart';
@@ -74,7 +75,8 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                           decoration: BoxDecoration(
                               color: Colors.grey,
                               image: DecorationImage(
-                                  image: AssetImage('assets/rec.png'),
+                                  image:
+                                      AssetImage("${photos[index].toString()}"),
                                   fit: BoxFit.cover),
                               borderRadius: BorderRadius.circular(12)),
                           child: shtuk[index] >= 1

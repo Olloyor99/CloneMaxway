@@ -15,7 +15,7 @@ import 'package:maxway_/src/widgets/settings.dart';
 void main() => runApp(MyWidget());
 
 class MyWidget extends StatelessWidget {
-  MyWidget({super.key});
+  const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

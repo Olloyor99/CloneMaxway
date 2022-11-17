@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maxway_/src/widgets/my_search_widget.dart';
+import 'my_search_widget.dart';
 
 class MyHome extends StatefulWidget {
   const MyHome({super.key});
