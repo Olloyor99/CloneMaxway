@@ -34,7 +34,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
           SizedBox(height: 16),
           Container(
             color: Color(0xfff8F6FA),
-            height: korzina == 0 ? 638 : 566,
+            height: korzina == 0 ? 638 : 556,
             child: CustomScrollView(scrollDirection: Axis.vertical, slivers: [
               MyTabbar(),
               MyRecoment(),
