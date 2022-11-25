@@ -11,8 +11,7 @@ class MyNaviBar extends StatefulWidget {
   State<MyNaviBar> createState() => _MyWidgetState();
 }
 
-class _MyWidgetState extends State<MyNaviBar> with TickerProviderStateMixin {
-  TabController? tabController;
+class _MyWidgetState extends State<MyNaviBar>  {
   late int activpage;
   late List pages;
 
@@ -25,7 +24,6 @@ class _MyWidgetState extends State<MyNaviBar> with TickerProviderStateMixin {
     ];
     activpage = 0;
     setState(() {
-      tabController = TabController(length: 3, vsync: this);
     });
     super.initState();
   }

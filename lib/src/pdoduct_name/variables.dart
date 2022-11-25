@@ -1,4 +1,4 @@
-import '../../list_name_price/narxlari.dart';
+import '../list_name_price/narxlari.dart';
 
 int jami = 0;
 int korzina = 0;

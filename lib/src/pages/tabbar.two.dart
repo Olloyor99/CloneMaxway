@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../list_name_price/tabbar_title.dart';
+import '../list_name_price/tabbar_title.dart';
 
 class TabbarTwo extends StatefulWidget {
   final TabbarTitle tabbar;

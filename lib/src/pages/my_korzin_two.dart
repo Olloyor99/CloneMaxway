@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:maxway_/providers/home_provider.dart';
+import 'package:provider/provider.dart';
 import 'my_korzina.dart';
 
 class My_korzin_two extends StatelessWidget {
@@ -12,6 +13,7 @@ class My_korzin_two extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final read = context.read<MyHomeProvider>();
     return Container(
       height: 60,
       margin: EdgeInsets.only(left: 12, right: 12),
@@ -53,7 +55,7 @@ class My_korzin_two extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   margin: EdgeInsets.only(right: 12),
                   child: Text(
-                    "${widget.korzina2} cум",
+                    "${read.korzina} cум",
                     style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w500,

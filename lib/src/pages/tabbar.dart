@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maxway_/src/pages/tabbar.two.dart';
-import '../../list_name_price/tabbar_title.dart';
+import '../list_name_price/tabbar_title.dart';
 
 class MyTabbar extends StatefulWidget {
   const MyTabbar({super.key});

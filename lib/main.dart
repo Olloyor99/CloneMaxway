@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maxway_/providers/home_provider.dart';
 import 'package:maxway_/src/pages/filial.dart';
 import 'package:maxway_/src/pages/my_info.dart';
 import 'package:maxway_/src/pages/my_korzina.dart';
@@ -12,8 +13,12 @@ import 'package:maxway_/src/pages/regstration_one.dart';
 import 'package:maxway_/src/pages/service.dart';
 import 'package:maxway_/src/pages/settings.dart';
 import 'package:maxway_/src/pdoduct_name/variables.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyWidget());
+void main() => runApp(ChangeNotifierProvider(
+      create: (context) => MyHomeProvider(),
+      child: MyWidget(),
+    ));
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -32,10 +37,7 @@ class MyWidget extends StatelessWidget {
             case 'myprofile':
               return MaterialPageRoute(builder: ((context) => MyAccount()));
             case 'korzina':
-              return MaterialPageRoute(
-                  builder: ((context) => MyKorzina(
-                        shtuk2: [shtuk],
-                      )));
+              return MaterialPageRoute(builder: ((context) => MyKorzina()));
             case 'info':
               return MaterialPageRoute(builder: ((context) => MyInfo()));
             case 'regstrationone':

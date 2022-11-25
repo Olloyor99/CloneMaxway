@@ -1,12 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:maxway_/list_name_price/l_photos.dart';
-import 'package:maxway_/list_name_price/narxlari.dart';
-import 'package:maxway_/list_name_price/tabbar_title.dart';
+import 'package:maxway_/providers/home_provider.dart';
+import 'package:maxway_/src/list_name_price/l_photos.dart';
+import 'package:maxway_/src/list_name_price/narxlari.dart';
 import 'package:maxway_/src/pages/my_korzina.dart';
 import 'package:maxway_/src/pages/my_recom.dart';
 import 'package:maxway_/src/pages/my_search_widget.dart';
 import 'package:maxway_/src/pages/tabbar.dart';
+import 'package:provider/provider.dart';
 
 class MyCustomScroll extends StatefulWidget {
   @override
@@ -15,16 +16,17 @@ class MyCustomScroll extends StatefulWidget {
 
 class _MyCatalogContainerState extends State<MyCustomScroll> {
   int jami = 0;
-  int korzina = 0;
-  int allValuePlus = 0;
+  //int read.korzina = 0;
+  // int read.allValuePlus = 0;
 
-  List<int> shtuk = List.generate(lavashnarxi.length, (index) => 0);
+//  List<int> read.shtuk = List.generate(lavashnarxi.length, (index) => 0);
   List<bool> withOpasity = List.generate(lavashnarxi.length, (index) => false);
   List<int> aloneValue = List.generate(lavashnarxi.length, (index) => 0);
 
   @override
   Widget build(BuildContext context) {
-    List<TabbarTitle> itmes = [];
+    //List<TabbarTitle> itmes = [];
+    final read = context.read<MyHomeProvider>();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -34,7 +36,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
           SizedBox(height: 16),
           Container(
             color: Color(0xfff8F6FA),
-            height: korzina == 0 ? 638 : 556,
+            height: read.korzina == 0 ? 638 : 556,
             child: CustomScrollView(scrollDirection: Axis.vertical, slivers: [
               MyTabbar(),
               MyRecoment(),
@@ -79,7 +81,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                                       AssetImage("${photos[index].toString()}"),
                                   fit: BoxFit.cover),
                               borderRadius: BorderRadius.circular(12)),
-                          child: shtuk[index] >= 1
+                          child: read.shtuk[index] >= 1
                               ? Container(
                                   height: 124,
                                   width: 170,
@@ -94,7 +96,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        shtuk[index].toString(),
+                                        read.shtuk[index].toString(),
                                         style: TextStyle(
                                             fontSize: 20,
                                             color: withOpasity[index]
@@ -135,12 +137,12 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                             GestureDetector(
                               onTap: () {
                                 setState(() {
-                                  shtuk[index]++;
+                                  read.shtuk[index]++;
                                   jami += lavashnarxi[index];
-                                  korzina = jami;
+                                  read.korzina = jami;
                                   withOpasity[index] = !withOpasity[index];
-                                  shtuk[index] > 0
-                                      ? allValuePlus += shtuk[index]
+                                  read.shtuk[index] > 0
+                                      ? read.allValuePlus += read.shtuk[index]
                                       : 0;
                                   aloneValue[index] += lavashnarxi[index];
 
@@ -158,7 +160,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                               },
                               child: AnimatedContainer(
                                 height: 40,
-                                width: shtuk[index] > 0 ? 0 : 154,
+                                width: read.shtuk[index] > 0 ? 0 : 154,
                                 alignment: Alignment.center,
                                 duration: Duration(seconds: 0),
                                 decoration: BoxDecoration(
@@ -173,7 +175,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                                 ),
                               ),
                             ),
-                            shtuk[index] > 0
+                            read.shtuk[index] > 0
                                 ? Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
@@ -181,13 +183,13 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                                       GestureDetector(
                                         onTap: () {
                                           setState(() {
-                                            shtuk[index]--;
+                                            read.shtuk[index]--;
                                             jami -= lavashnarxi[index];
-                                            korzina = jami;
+                                            read.korzina = jami;
                                             withOpasity[index] =
                                                 !withOpasity[index];
-                                            shtuk[index] == 0
-                                                ? allValuePlus -= 1
+                                            read.shtuk[index] == 0
+                                                ? read.allValuePlus -= 1
                                                 : 0;
                                             aloneValue[index] -=
                                                 lavashnarxi[index];
@@ -223,16 +225,16 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                                         width: 74,
                                         alignment: Alignment.center,
                                         child: Text(
-                                          shtuk[index].toString(),
+                                          read.shtuk[index].toString(),
                                           style: TextStyle(fontSize: 15),
                                         ),
                                       ),
                                       GestureDetector(
                                         onTap: () {
                                           setState(() {
-                                            shtuk[index]++;
+                                            read.shtuk[index]++;
                                             jami += lavashnarxi[index];
-                                            korzina = jami;
+                                            read.korzina = jami;
                                             withOpasity[index] =
                                                 !withOpasity[index];
                                             aloneValue[index] +=
@@ -279,7 +281,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
               ),
             ]),
           ),
-          korzina == 0
+          read.korzina == 0
               ? Container()
               : Container(
                   height: 72,
@@ -293,7 +295,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                   child: GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, 'korzina');
-                      navigateKorzin();
+                      //navigateKorzin();
                     },
                     child: Container(
                       height: 48,
@@ -310,7 +312,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                             backgroundColor: Color.fromARGB(255, 142, 138, 136),
                             radius: 15,
                             child: Text(
-                              "$allValuePlus",
+                              "${read.allValuePlus}",
                               style: TextStyle(color: Colors.white),
                             ),
                           ),
@@ -326,7 +328,7 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
                             width: 145,
                             alignment: Alignment.centerRight,
                             child: Text(
-                              "$korzina сум",
+                              "${read.korzina} сум",
                               style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
@@ -343,13 +345,10 @@ class _MyCatalogContainerState extends State<MyCustomScroll> {
     );
   }
 
-  void navigateKorzin() {
-    Navigator.of(context).push(MaterialPageRoute(
-      builder: ((context) => MyKorzina(
-            shtuk2: shtuk,
-            korzina2: korzina,
-            forlist: allValuePlus,
-          )),
-    ));
-  }
+  // void navigateKorzin() {
+  //   Navigator.of(context).push(MaterialPageRoute(
+  //     builder: ((context) => MyKorzina(
+  //         )),
+  //   ));
+  // }
 }

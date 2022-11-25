@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:maxway_/list_name_price/l_photos.dart';
-import 'package:maxway_/list_name_price/narxlari.dart';
+import 'package:maxway_/providers/home_provider.dart';
+import 'package:maxway_/src/list_name_price/l_photos.dart';
+import 'package:maxway_/src/list_name_price/narxlari.dart';
 import 'package:maxway_/src/pages/customhome.dart';
 import 'package:maxway_/src/pages/my_dialog.dart';
+import 'package:provider/provider.dart';
 import 'my_korzin_two.dart';
 
 class MyKorzina extends StatefulWidget {
-  static List shtuk2 = List.generate(lavashnomi.length, (index) => 0);
-
-  int? korzina2;
-  int? forlist;
-  MyKorzina({Key? key, shtuk2, this.korzina2, this.forlist}) : super(key: key);
+  MyKorzina({
+    Key? key,
+  }) : super(key: key);
   @override
   State<MyKorzina> createState() => MyKorzinaState();
 }
@@ -19,6 +19,7 @@ class MyKorzinaState extends State<MyKorzina> {
   MyCustomScroll myCustomScroll = MyCustomScroll();
   @override
   Widget build(BuildContext context) {
+    final read = context.read<MyHomeProvider>();
     return Scaffold(
       backgroundColor: Color(0xfff8F6FA),
       appBar: AppBar(
@@ -27,7 +28,7 @@ class MyKorzinaState extends State<MyKorzina> {
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
-            Navigator.pushReplacementNamed(context, 'my_home');
+            Navigator.pop(context);
           },
           icon: Icon(
             Icons.arrow_back_ios,
@@ -59,7 +60,7 @@ class MyKorzinaState extends State<MyKorzina> {
                     topLeft: Radius.circular(12)),
               ),
               child: ListView.builder(
-                itemCount: widget.forlist,
+                itemCount: read.allValuePlus,
                 itemBuilder: ((context, index) => Container(
                       height: 126,
                       width: 339,
@@ -86,8 +87,7 @@ class MyKorzinaState extends State<MyKorzina> {
                                       Container(
                                         width: 125,
                                         height: 18,
-                                        margin:
-                                            EdgeInsets.only(top: 12, left: 8),
+                                        margin: EdgeInsets.only(top: 12),
                                         child: Text(
                                           "${lavashnomi[index].toString()}",
                                           style: TextStyle(
@@ -130,7 +130,10 @@ class MyKorzinaState extends State<MyKorzina> {
                                             borderRadius:
                                                 BorderRadius.circular(8)),
                                         child: IconButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            read.shtuk[index]--;
+                                            setState(() {});
+                                          },
                                           icon: Icon(
                                             Icons.remove_outlined,
                                             color: Colors.grey[700],
@@ -140,12 +143,12 @@ class MyKorzinaState extends State<MyKorzina> {
                                       ),
                                       SizedBox(width: 12),
                                       Text(
-                                        "1",
+                                        " ${read.shtuk[index].toString()} ",
                                         style: TextStyle(
                                             fontSize: 15,
                                             fontWeight: FontWeight.w500),
                                       ),
-                                      SizedBox(width: 12),
+                                      SizedBox(width: 5),
                                       Container(
                                         height: 32,
                                         width: 32,
@@ -156,7 +159,10 @@ class MyKorzinaState extends State<MyKorzina> {
                                             borderRadius:
                                                 BorderRadius.circular(8)),
                                         child: IconButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            read.shtuk[index]++;
+                                            setState(() {});
+                                          },
                                           icon: Icon(
                                             Icons.add,
                                             color: Colors.grey[700],
@@ -165,10 +171,10 @@ class MyKorzinaState extends State<MyKorzina> {
                                         ),
                                       ),
                                       Container(
-                                        width: 150,
+                                        width: 140,
                                       )
                                     ],
-                                  )
+                                  ),
                                 ],
                               ),
                             ],

@@ -1,8 +1,0 @@
-version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
-options: "f5d4aec5574aa5fd8edd9116ade5261910fc0eceac383578d2dc9381cb31508a"
-build_start_time: [1668761819, 892277956]
-build_end_time: [1668761827, 643035888]
-inputs:
-  "/Users/olloyornodirov/Desktop/maxway_/macos/Flutter/GeneratedPluginRegistrant.swift": [1668761808, 737255573]
-  "/Users/olloyornodirov/Desktop/maxway_/macos/Runner/AppDelegate.swift": [1657701532, 0]
-  "/Users/olloyornodirov/Desktop/maxway_/macos/Runner/MainFlutterWindow.swift": [1657701532, 0]
